@@ -1,0 +1,2 @@
+# new_energy_electric_vehicle_use_experience_big_data_analysis_system
+基于python爬虫、django的新能源电动汽车使用体验大数据分析系统
