@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<table class="table table-bordered text-center" style="margin-top:8px" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+    <tr>
+        <th>系列名称</th>
+        <th>系列URL</th>
+        <th>系列名称拼音</th>
+        <th>系列等级</th>
+        <th>最低价格</th>
+        <th>最高价格</th>
+        <th>最低指导价格</th>
+        <th>最高指导价格</th>
+        <th>补贴金额</th>
+        <th>车型款数</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for d in data %}
+    <tr>
+        <td>{{ d.serie_name }}</td>
+        <td><img src="{{ d.serie_img }}" width="100" height="100" ></td>
+        <td>{{ d.serie_pinyin }}</td>
+        <td>{{ d.serie_level }}</td>
+        <td>{{ d.min_price }}</td>
+        <td>{{ d.max_price }}</td>
+        <td>{{ d.min_guide_price }}</td>
+        <td>{{ d.max_guide_price }}</td>
+        <td><b style="color:blue">{{ d.subsidy_amount }}</b></td>
+        <td>{{ d.model_count }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

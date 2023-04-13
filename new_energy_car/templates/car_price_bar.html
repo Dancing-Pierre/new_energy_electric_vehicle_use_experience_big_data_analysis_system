@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}
+    <script src="{% static 'vendor/echarts/echarts.min.js' %}"></script>
+    <style>
+        .text_16 {
+            font-size: 16px;
+        }
+
+        .text_18 {
+            font-size: 18px;
+        }
+
+        .img-value {
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .div-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .div-value {
+            position: relative;
+            height: 220px;
+            text-align: center;
+        }
+
+        .img-pos {
+            position: absolute;
+            top: -40%;
+            right: 25%;
+            transform: rotate(
+                    16deg
+            );
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-xl-12 col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">各个价格区间车型数量分析</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area" id="div_car_price_bar">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+    <script src="{% static 'js/car_price_bar.js' %}"></script>
+
+{% endblock %}
